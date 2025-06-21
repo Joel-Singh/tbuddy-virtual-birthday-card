@@ -4,32 +4,38 @@
     <title>HAPPY BRITHDAY TBUDDY</title>
     <style>
     * {
-    box-sizing: border-box;
+      box-sizing: border-box;
     }
     :root {
-    /* From https://www.color-hex.com/color-palette/8255 */
-    --strong-red: #db1515;
-    --red: #e53939;
-    --light-red: #fd5f5f;
-    --pink: #ff8f8f;
-    --light-pink: #ffb7b7;
+      /* From https://www.color-hex.com/color-palette/8255 */
+      --strong-red: #db1515;
+      --red: #e53939;
+      --light-red: #fd5f5f;
+      --pink: #ff8f8f;
+      --light-pink: #ffb7b7;
     }
+
     :root {
-    background-color: var(--light-pink);
-    border: 2em solid var(--pink);
+      background-color: var(--light-pink);
+      border: 2em solid var(--pink);
     }
 
     body {
-    justify-items: center;
+      justify-items: center;
+    }
+
+    .intro-image {
+      width: 20em;
+      border: solid var(--light-red);
     }
     </style>
   </head>
   <body>
     <h1>Happy Birthday Our Favorite Buddy</h1>
     <div style="display: flex; align-items: center; gap: 20px;">
-      <img src="assets/tionna-with-my-glasses.png" style="width: 20em;"></img>
-      <img src="assets/tbuddy-consuming-snagel-with-bow.png" style="width: 20em; margin-top: auto; margin-bottom: auto;"></img>
-      <img src="assets/tbuddy-hero-image-with-sparkles.png" style="width: 20em;"></img>
+      <img class="intro-image" src="assets/tionna-with-my-glasses.png"></img>
+      <img class="intro-image" src="assets/tbuddy-consuming-snagel-with-bow.png"></img>
+      <img class="intro-image" src="assets/tbuddy-hero-image-with-sparkles.png"></img>
     </div>
 
     <h2>Heartfelt messages from friends/enemies</h2>
