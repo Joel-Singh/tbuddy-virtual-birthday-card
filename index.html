@@ -18,6 +18,8 @@
     :root {
       background-color: var(--light-pink);
       border: 2em solid var(--pink);
+
+      height: 100vh;
     }
 
     body {
@@ -38,54 +40,36 @@
     }
     </style>
   </head>
-  <body>
-    <h1>Happy Birthday Tionna!!!!</h1>
-    <div style="display: flex; align-items: center; gap: 20px;">
-      <img class="intro-image" src="assets/tionna-with-my-glasses.png" />
-      <img class="intro-image" src="assets/tbuddy-consuming-snagel-with-bow.png" />
-      <img class="intro-image" src="assets/tbuddy-hero-image-with-sparkles.png" />
-    </div>
-
-    <h2>Virtual Birthday Cards!</h2>
-    <section style="display: flex; flex-direction: column; align-items: center;">
-      <h3>From: Tori Tutt</h3>
-      <img src="assets/personal-card-images/tori-tutt.jpeg" style="width: 20em;" />
-      <p>I love you so much and you are a light within this world. Keep on being you and being incredible. Even when seeing Tyler the Creator in person I think the best part was being there with you💓 Ur always my Tboner oh Tboner don’t forget that queen happy birthday and to many many more!!!!!💞💞💞🥳🥳🥳🎂🎂🎂</p>
-    </section>
-    <section style="display: flex; flex-direction: column; align-items: center;">
-      <h3 style="margin-bottom: -5px;">From: Colin Nguyen</h3>
-      <p>
-        Tionna, <br>
-        <br>
-
-        I hope you have enjoyed your first year in college and I wanted to congratulate you for all the accomplishments and friends that you've made in such a compact amount of time. You have such a bright, comedic, and enthusiastic spirit, and I hope that you never lose such a valuable thing. I wish you nothing but the best for this next year of your life and for every single one the follows. Happy birthday! <br>
-        <br>
-
-        Colin Nguyen 
-      </p>
-    </section>
-    <section style="display: flex; flex-direction: column; align-items: center;">
-      <h3>From: Edin Garcia</h3>
-      <p>Happy birthday Tionna, I don’t have a single image of you but I swear I don’t hate you 😭. Hope you have a wonderful birthday. From, Edin :)</p>
-    </section>
-    <section style="display: flex; flex-direction: column; align-items: center;">
-      <h3>From: Michael Nelson</h3>
-      <img src="assets/personal-card-images/michael-nelson.jpg" style="width: 20em;" />
-      <p>Hey Tionna! Thanks for being one of my first and best Denison friends! Here's to another great year!</p>
-    </section>
-    <section style="display: flex; flex-direction: column; align-items: center;">
-      <h3>From: Sasha Gavrilova</h3>
-      <img src="assets/personal-card-images/sasha-gavrilova.jpg" style="width: 20em;" />
-      <p>Happy birthday!!!!!!</p>
-    </section>
-    <section style="display: flex; flex-direction: column; align-items: center;">
-      <h3>From: Yuvelk Lopez-Garcia</h3>
-      <img src="assets/personal-card-images/yuvelk.jpg" style="width: 20em;" />
-      <p>Happy Birthday Tionna!! Although we are apart I know you'll hear my heartfelt sentiment as I scream it from inside this cave (herro?) Remind me to treat you to something once we get back on campus and I hope you have an amazing birthday Queen! 💅🥳</p>
-    </section>
-    <section style="display: flex; flex-direction: column; align-items: center;">
-      <h3>From: Joel Singh</h3>
-      <p>GRAAAAAAAAAAAAAAH happy birthday Tionna!!! You are such an epic super cool and hilarious individual to be around and I'm not just being nice to you because it's your birthday. Being your friend was wonderful last school year and I hope to see you more next year.</p>
-    </section>
+  <body style="display: flex; flex-direction: column; align-items: center; height: 100%;">
+    <p id="countdown" style="margin-top: 200px; font-size: 3em;">Count down goes here</p>
   </body>
+
+  <script>
+  // Set the target date in Central Daylight Time (CDT, UTC-5)
+  const targetDate = new Date("2025-06-23T00:00:00-05:00");
+
+  const countdownEl = document.querySelector("p#countdown");
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = targetDate - now;
+
+    if (diff <= 0) {
+      return;
+    }
+
+    const totalSeconds = Math.floor(diff / 1000);
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    countdownEl.textContent =
+      `🎊 ` +
+      `${days}d ${hours}h ${minutes}m ${seconds}s 🎈`;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+  </script>
 </html>
